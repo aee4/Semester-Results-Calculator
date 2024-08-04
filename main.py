@@ -3,35 +3,38 @@ from model import calculate_grade
 from model import calculate_weighted_gpa
 from model import semester_class
 
-student_id = input("Enter your Student ID: ")
-marks_programming = float(input("Enter your marks for Programming: "))
-marks_hardware = float(input("Enter your marks for Hardware: "))
-marks_aca_writing = float(input("Enter your marks for Academic Writing: "))
-marks_french = float(input("Enter your marks for French: "))
+program = input("Are there more students? Type yes to see results page")
+while program.lower() == "yes":
 
-credit_hours = 3
+  student_id = input("Enter your Student ID: ")
+  marks_programming = float(input("Enter your marks for Programming: "))
+  marks_hardware = float(input("Enter your marks for Hardware: "))
+  marks_aca_writing = float(input("Enter your marks for Academic Writing: "))
+  marks_french = float(input("Enter your marks for French: "))
 
-grade_programming = calculate_grade(marks_programming)
-grade_hardware = calculate_grade(marks_hardware)
-grade_aca_writing = calculate_grade(marks_aca_writing)
-grade_french = calculate_grade(marks_french)
+  credit_hours = 3
 
-gp_programming = calculate_grade_point(marks_programming)
-gp_hardware = calculate_grade_point(marks_hardware)
-gp_aca_writing = calculate_grade_point(marks_aca_writing)
-gp_french = calculate_grade_point(marks_aca_writing)
+  grade_programming = calculate_grade(marks_programming)
+  grade_hardware = calculate_grade(marks_hardware)
+  grade_aca_writing = calculate_grade(marks_aca_writing)
+  grade_french = calculate_grade(marks_french)
 
-wgp_programming = calculate_weighted_gpa(marks_programming)
-wgp_hardware = calculate_weighted_gpa(marks_hardware)
-wgp_aca_writing = calculate_weighted_gpa(marks_aca_writing)
-wgp_french = calculate_weighted_gpa(marks_french)
+  gp_programming = calculate_grade_point(marks_programming)
+  gp_hardware = calculate_grade_point(marks_hardware)
+  gp_aca_writing = calculate_grade_point(marks_aca_writing)
+  gp_french = calculate_grade_point(marks_aca_writing)
 
-total_credit_hours = credit_hours * 4
-total_wgp = (wgp_programming + wgp_hardware + wgp_aca_writing + wgp_french)
-sgpa = total_wgp / total_credit_hours
-sem_class =semester_class(sgpa) 
+  wgp_programming = calculate_weighted_gpa(marks_programming)
+  wgp_hardware = calculate_weighted_gpa(marks_hardware)
+  wgp_aca_writing = calculate_weighted_gpa(marks_aca_writing)
+  wgp_french = calculate_weighted_gpa(marks_french)
 
-print(f"""
+  total_credit_hours = credit_hours * 4
+  total_wgp = (wgp_programming + wgp_hardware + wgp_aca_writing + wgp_french)
+  sgpa = total_wgp / total_credit_hours
+  sem_class =semester_class(sgpa) 
+
+  print(f"""
 FIRST SEMESTER RESULTS *************************
 Student ID: {student_id}
 
