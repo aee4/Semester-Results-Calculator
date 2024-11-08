@@ -1,7 +1,7 @@
-from model import calculate_grade_point
-from model import calculate_grade
-from model import calculate_weighted_gpa
-from model import semester_class
+from src.model import calculate_grade_point
+from src.model import calculate_grade
+from src.model import calculate_weighted_gpa
+from src.model import semester_class
 
 
 while True:
