@@ -1,7 +1,7 @@
-from src.model import calculate_grade_point
-from src.model import calculate_grade
-from src.model import calculate_weighted_gpa
-from src.model import semester_class
+from models.gpa_tools import calculate_grade_point
+from models.gpa_tools import calculate_grade
+from models.gpa_tools import calculate_weighted_gpa
+from models.gpa_tools import semester_class
 
 
 while True:
@@ -59,5 +59,4 @@ Semester Class: {sem_class}
         break
     else:
         print("Invalid response. Please enter 'yes' or 'no'.")
-
-  
+        
